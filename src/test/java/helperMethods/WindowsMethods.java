@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WindowMethods {
+public class WindowsMethods {
 
     public WebDriver driver;
     //Constructor
-    public WindowMethods(WebDriver driver) {
+    public WindowsMethods(WebDriver driver) {
         this.driver = driver;
     }
 
