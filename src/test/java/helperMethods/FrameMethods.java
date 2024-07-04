@@ -3,24 +3,24 @@ package helperMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class FrameMethods {
+import java.time.Duration;
 
+public class FrameMethods {
     public WebDriver driver;
 
     public FrameMethods(WebDriver driver) {
         this.driver = driver;
-
     }
 
-    public void switchtoFrame(String text){
+    public void switchToFrame(String text){
         driver.switchTo().frame(text);
     }
 
-    public void switchtoframe(WebElement element){
+    public void switchToFrame(WebElement element){
         driver.switchTo().frame(element);
     }
 
-    public void defaultcontentMethod(){
+    public void switchToDefault(){
         driver.switchTo().defaultContent();
     }
 }

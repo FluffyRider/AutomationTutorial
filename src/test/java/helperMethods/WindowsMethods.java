@@ -8,20 +8,21 @@ import java.util.List;
 public class WindowsMethods {
 
     public WebDriver driver;
-    //Constructor
+
     public WindowsMethods(WebDriver driver) {
         this.driver = driver;
     }
 
+    //metode generale pt interactiunea cu tab/window
+    public void switchSpecificTab(Integer index) {
+        List<String> tabs = new ArrayList<>(driver.getWindowHandles());   //gaseste cate taburi/windows sunt deschise
 
-    //Metode generale pentru interactiunea cu tab/window
-
-    public void swittchSpecifictab(Integer index){
-
-        List<String> window = new ArrayList<>(driver.getWindowHandles());//gaseste cate taburi/window gaseste deschise in mom definirii
-        driver.switchTo().window(window.get(index));
+        //ne mutam cu focusul pe un anumit tab
+        driver.switchTo().window(tabs.get(index));
     }
-    public void closeCurentTab(){
+
+    public void closeCurrentTab() {
         driver.close();
+
     }
 }

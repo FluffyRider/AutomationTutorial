@@ -36,7 +36,7 @@ public class WindowsPage {
         System.out.println(driver.getCurrentUrl()); //url-ul paginii curente pe care ne aflam
         windowsMethods.switchSpecificTab(1);
         System.out.println(driver.getCurrentUrl());
-        windowsMethods.closeCurentTab();
+        windowsMethods.closeCurrentTab();
         windowsMethods.switchSpecificTab(0);
     }
 
@@ -47,7 +47,7 @@ public class WindowsPage {
         System.out.println(driver.getCurrentUrl());
         windowsMethods.switchSpecificTab(1);
         System.out.println(driver.getCurrentUrl());
-        windowsMethods.closeCurentTab();
+        windowsMethods.closeCurrentTab();
     }
 
 }

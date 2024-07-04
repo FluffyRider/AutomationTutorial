@@ -16,16 +16,30 @@ public class HomePage {
     public HomePage(WebDriver driver) {
         this.driver = driver;
         elementMethods = new ElementMethods(driver);
-        pageMethods  = new PageMethods(driver);
+        pageMethods = new PageMethods(driver);
         PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//h5[text()='Alerts, Frame & Windows']")
     public WebElement alertsMenu;
+    @FindBy(xpath = "//h5[text()='Elements']")
+    public WebElement elementsMenu;
+    @FindBy(xpath = "//h5[text()='Forms']")
+    public WebElement formMenu;
 
     public void navigateToAlertsMenu(){
-        pageMethods.scrollPage(0, 350);
+        pageMethods.scrollPage(0,350);
         elementMethods.clickElement(alertsMenu);
+    }
+
+    public void navigateToFormsMenu(){
+        pageMethods.scrollPage(0, 350);
+        elementMethods.clickElement(formMenu);
+    }
+
+    public void navigateToElementsMenu(){
+        pageMethods.scrollPage(0, 350);
+        elementMethods.clickElement(elementsMenu);
     }
 
 

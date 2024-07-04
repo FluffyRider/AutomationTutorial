@@ -11,12 +11,9 @@ public class PageMethods {
     public PageMethods(WebDriver driver) {
         this.driver = driver;
     }
+
     public void scrollPage(Integer x, Integer y){
-
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy ("+x+","+y+")", "");
-
-
-
+        js.executeScript("window.scrollBy("+x+","+y+")", "");
     }
 }

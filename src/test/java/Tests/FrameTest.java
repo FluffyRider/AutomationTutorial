@@ -18,40 +18,25 @@ public class FrameTest {
     public WebDriver driver;
 
     @Test
-    public void metodaTest() {
-
-        //Deschidem un browser
+    public void alertTest() {
         driver = new ChromeDriver();
-
-        //Accesam un anumit URL
         driver.get("https://demoqa.com");
-
-        //Maximize browser
         driver.manage().window().maximize();
-
-        //Wait implicit
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        AlertMethods alertMethods = new AlertMethods(driver);
-        ElementMethods elementMethods = new ElementMethods(driver);
-        PageMethods pageMethods = new PageMethods(driver);
-        FrameMethods frameMethods = new FrameMethods(driver);
 
         HomePage homePage = new HomePage(driver);
         homePage.navigateToAlertsMenu();
-
 
         AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage(driver);
         alertsWindowsPage.navigateToFramePage();
 
         FramePage framePage = new FramePage(driver);
-        framePage.interectWithBigIFrame();
-        framePage.interectWithSmallIFame();
-        framePage.navigateToNastedFrame();
+        framePage.interactWithBigIFrame();
+        framePage.interactWithSmallIFrame();
+        framePage.navigateToNestedFrames();
 
         NestedFramePage nestedFramePage = new NestedFramePage(driver);
-        nestedFramePage.interectWithNestedFrame();
-
+        nestedFramePage.interactWithNestedFrames();
 
         //driver.quit();
 

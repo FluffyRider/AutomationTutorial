@@ -17,22 +17,22 @@ public class NestedFramePage {
     public NestedFramePage(WebDriver driver) {
         this.driver = driver;
         elementMethods = new ElementMethods(driver);
-        pageMethods  = new PageMethods(driver);
+        pageMethods = new PageMethods(driver);
         frameMethods = new FrameMethods(driver);
         PageFactory.initElements(driver, this);
-
     }
 
     @FindBy(xpath = "//iframe[@srcdoc='<p>Child Iframe</p>']")
-    public WebElement childFrame;
+    WebElement childFrame;
 
     @FindBy(xpath = "//p")
-    public WebElement text;
+    WebElement text;
 
-    public void interectWithNestedFrame(){
-        frameMethods.switchtoFrame("frame1");
-        frameMethods.switchtoFrame(childFrame);
+    public void interactWithNestedFrames(){
+        frameMethods.switchToFrame("frame1");
+        frameMethods.switchToFrame(childFrame);
         System.out.println(text.getText());
+        frameMethods.switchToDefault();
     }
 
 }

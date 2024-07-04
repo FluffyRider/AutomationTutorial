@@ -9,7 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class FramePage {public WebDriver driver;
+public class FramePage {
+
+    public WebDriver driver;
     public ElementMethods elementMethods;
     public PageMethods pageMethods;
     public FrameMethods frameMethods;
@@ -17,37 +19,34 @@ public class FramePage {public WebDriver driver;
     public FramePage(WebDriver driver) {
         this.driver = driver;
         elementMethods = new ElementMethods(driver);
-        pageMethods  = new PageMethods(driver);
+        pageMethods = new PageMethods(driver);
         frameMethods = new FrameMethods(driver);
         PageFactory.initElements(driver, this);
-
     }
 
     @FindBy(id = "sampleHeading")
-    public WebElement iframeText;
-
+    WebElement iframeText;
     @FindBy(id = "sampleHeading")
-    public WebElement iframeText2;
-
+    WebElement iframeText2;
     @FindBy(xpath = "//span[text()='Nested Frames']")
-    public WebElement nestedButton;
+    WebElement nestedFramesFromSubmenu;
 
 
-    public void interectWithBigIFrame(){
-        frameMethods.switchtoFrame("frame1");
+    public void interactWithBigIFrame(){
+        frameMethods.switchToFrame("frame1");
         System.out.println(iframeText.getText());
-        frameMethods.defaultContent();
+        driver.switchTo().defaultContent();
     }
 
-    public void interectWithSmallIFame(){
-        frameMethods.switchtoFrame("frame2");
+    public void interactWithSmallIFrame(){
+        frameMethods.switchToFrame("frame2");
         System.out.println(iframeText2.getText());
-        frameMethods.defaultContent();
+        frameMethods.switchToDefault();
     }
 
-    public void navigateToNastedFrame() {
-        pageMethods.scrollPage(0, 350);
-        elementMethods.clickElement(nestedButton);
-
+    public void navigateToNestedFrames(){
+        elementMethods.clickElement(nestedFramesFromSubmenu);
     }
+
+
 }

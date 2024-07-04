@@ -13,30 +13,22 @@ public class WindowTest {
     public WebDriver driver;
 
     @Test
-    public void metodaTest() {
-
-        //Deschidem un browser
+    public void windowTest() {
         driver = new ChromeDriver();
-
-        //Accesam un anumit URL
         driver.get("https://demoqa.com");
-
-        //Maximize browser
         driver.manage().window().maximize();
 
-        //Definim un obliect de tipul Window Methods
         HomePage homePage = new HomePage(driver);
         homePage.navigateToAlertsMenu();
 
-        AlertsWindowsPage alertsWindows = new AlertsWindowsPage(driver);
-        alertsWindows.navigateToWindowPage();
+        AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage(driver);
+        alertsWindowsPage.navigateToWindowPage();
 
         WindowsPage windowsPage = new WindowsPage(driver);
         windowsPage.interactWithNewTab();
         windowsPage.interactWithNewWindow();
 
         driver.quit();
-
 
     }
 }
