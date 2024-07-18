@@ -14,13 +14,10 @@ public class WindowsPage extends BasePage {
     }
 
     @FindBy(id = "tabButton")
-    public WebElement newTab;
+    private WebElement newTab;
 
     @FindBy(id = "windowButton")
-    public WebElement newWindow;
-
-
-
+    private WebElement newWindow;
 
     public void interactWithNewTab(){
         pageMethods.scrollPage(0, 150);

@@ -11,31 +11,31 @@ public class WebTablePage extends BasePage{
     }
 
     @FindBy(id = "addNewRecordButton")
-    public WebElement addElement;
+    private WebElement addElement;
     @FindBy(id = "firstName")
-    public WebElement firstNameElement;
+    private WebElement firstNameElement;
     @FindBy(id = "lastName")
-    public WebElement lastNameElement;
+    private WebElement lastNameElement;
     @FindBy(id = "userEmail")
-    public WebElement emailElement;
+    private WebElement emailElement;
     @FindBy(id = "age")
-    public WebElement ageElement;
+    private WebElement ageElement;
     @FindBy(id = "salary")
-    public WebElement salaryElement;
+    private WebElement salaryElement;
     @FindBy(id = "department")
-    public WebElement departamentElement;
+    private WebElement departamentElement;
     @FindBy(id = "submit")
-    public WebElement submitElement;
+    private WebElement submitElement;
     @FindBy(id = "edit-record-4")
-    public WebElement updateElement;
+    private WebElement updateElement;
     @FindBy(id = "salary")
-    public WebElement editSalaryElement;
+    private WebElement editSalaryElement;
     @FindBy(id = "department")
-    public WebElement editDepartamentElement;
+    private WebElement editDepartamentElement;
     @FindBy(id = "submit")
-    public WebElement editSubmitElement;
+    private WebElement editSubmitElement;
     @FindBy(id = "delete-record-4")
-    public WebElement deleteElement;
+    private WebElement deleteElement;
 
     public void addEntry(String firstNameValue, String lastNameValue, String emailValue, String ageValue, String salaryValue,
                          String departamentValue){
