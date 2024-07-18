@@ -1,40 +1,32 @@
 package Tests;
-import helperMethods.ElementMethods;
-import helperMethods.PageMethods;
+
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.devtools.v85.page.Page;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.FormsPage;
 import pages.HomePage;
 import pages.PracticeFormPage;
-
-import java.io.File;
+import sharedData.SharedData;
 import java.util.Arrays;
 import java.util.List;
 
-public class PracticeFormTest {
+public class PracticeFormTest extends SharedData {
     public WebDriver driver;
 
     @Test
     public void metodaTest() {
 
-        driver = new ChromeDriver();
-        driver.get("https://demoqa.com");
-        driver.manage().window().maximize();
-
         HomePage homePage = new HomePage(driver);
         homePage.navigateToFormsMenu();
+
         FormsPage formsPage = new FormsPage(driver);
         formsPage.navigateToPracticeForm();
+
         PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
         String firstNameValue = "Larisa";
         String lastNameValue = "Buleu";
         String emailValue = "larisa@yahoo.com";
-        String genderValue = "Female";
-        String mobileValue = "0766000000";
+        String genderValue = "Male";
+        String mobileValue = "1234567890";
         String dateofBirthDayValue = "15";
         String subjectValue = "Accounting";
         List<String> hobbiesValues = Arrays.asList("Reading", "Music");

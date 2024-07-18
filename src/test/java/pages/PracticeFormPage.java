@@ -1,94 +1,79 @@
 package pages;
-
-import helperMethods.AlertMethods;
-import helperMethods.ElementMethods;
-import helperMethods.PageMethods;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-
 import java.io.File;
 import java.util.List;
 
-public class PracticeFormPage {
-    public WebDriver driver;
-    public ElementMethods elementMethods;
-    public PageMethods pageMethods;
-    public AlertMethods alertMethods;
-
+public class PracticeFormPage extends BasePage {
     public PracticeFormPage(WebDriver driver) {
-        this.driver = driver;
-        elementMethods = new ElementMethods(driver);
-        pageMethods = new PageMethods(driver);
-        alertMethods = new AlertMethods(driver);
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
-
     @FindBy(id = "firstName")
-    public WebElement firstNameElement;
+    private WebElement firstNameElement;
 
     @FindBy(id = "lastName")
-    public WebElement lastNameElement;
+    private WebElement lastNameElement;
 
     @FindBy(id = "userEmail")
-    public WebElement emailElement;
+    private WebElement emailElement;
 
     @FindBy(xpath = "//div[@id='genterWrapper']/div/div/label[@class='custom-control-label']")
-    public List<WebElement> genderElements;
+    private List<WebElement> genderElements;
 
     @FindBy(id = "userNumber")
-    public WebElement mobileElement;
+    private WebElement mobileElement;
 
     @FindBy(id = "dateOfBirthInput")
-    public WebElement dateOfBirthElement;
+    private WebElement dateOfBirthElement;
 
     @FindBy(className = "react-datepicker__month-select")
-    public WebElement dateOfBirthMonthElement;
+    private WebElement dateOfBirthMonthElement;
 
     @FindBy(className = "react-datepicker__year-select")
-    public WebElement dateOfBirthYearElement;
+    private WebElement dateOfBirthYearElement;
 
     @FindBy(xpath = "//div[@class='react-datepicker__month']//div[not(contains(@class,'--outside-month')) and @role='option']")
-    public List<WebElement> dateOfBirthDaysElements;
+    private List<WebElement> dateOfBirthDaysElements;
 
     @FindBy(id = "subjectsInput")
-    public WebElement subjectElement;
+    private WebElement subjectElement;
 
     @FindBy(xpath = "//div[@id = 'hobbiesWrapper']/div/div/label[@class='custom-control-label']")
-    public List<WebElement> hobbiesElements;
+    private List<WebElement> hobbiesElements;
 
     @FindBy(id = "uploadPicture")
-    public WebElement fileUploadElement;
+    private WebElement fileUploadElement;
 
     @FindBy(id = "currentAddress")
-    public WebElement addressElement;
+    private WebElement addressElement;
 
     @FindBy(id = "state")
-    public WebElement stateElement;
+    private WebElement stateElement;
 
     @FindBy(id = "react-select-3-input")
-    public WebElement stateInputElement;
+    private WebElement stateInputElement;
 
     @FindBy(id = "city")
-    public WebElement cityElement;
+    private WebElement cityElement;
 
     @FindBy(id = "react-select-4-input")
-    public WebElement cityInputElement;
+    private WebElement cityInputElement;
 
     @FindBy(id = "submit")
-    public WebElement submitElement;
+    private WebElement submitElement;
 
     @FindBy(id = "example-modal-sizes-title-lg")
-    public WebElement thankYouMessageElement;
+    private WebElement thankYouMessageElement;
 
     @FindBy(xpath = "//table[@class='table table-dark table-striped table-bordered table-hover']/tbody/tr")
-    public List<WebElement> tableValues;
+    private List<WebElement> tableValues;
 
     @FindBy(id = "closeLargeModal")
-    public WebElement closeButton;
+    private WebElement closeButton;
+
 
     public void fillEntireForm(String firstNameValue, String lastNameValue, String emailValue, String genderValue, String mobileValue,
                                String dateofBirthDayValue, String subjectValue, List<String> hobbiesValues, String picturePathValue, String addressValue, String stateInputValue,

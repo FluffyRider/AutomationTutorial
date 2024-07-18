@@ -6,24 +6,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AlertsWindowsPage {
-    public WebDriver driver;
-    public ElementMethods elementMethods;
-    public PageMethods pageMethods;
-
+public class AlertsWindowsPage extends BasePage {
     public AlertsWindowsPage(WebDriver driver) {
-        this.driver = driver;
-        elementMethods = new ElementMethods(driver);
-        pageMethods = new PageMethods(driver);
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(xpath = "//span[text()='Browser Windows']")
-    public WebElement browserWindowsSubmenu;
+    private WebElement browserWindowsSubmenu;
     @FindBy(xpath = "//span[text()='Frames']")
-    public WebElement framesFromSubmenu;
+    private WebElement framesFromSubmenu;
     @FindBy(xpath = "//span[text()='Alerts']")
-    public WebElement alertsFromSubmenu;
+    private WebElement alertsFromSubmenu;
+
+
 
     public void navigateToWindowPage(){
         pageMethods.scrollPage(0,350);

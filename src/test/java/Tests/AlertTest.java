@@ -10,24 +10,22 @@ import org.testng.annotations.Test;
 import pages.AlertsPage;
 import pages.AlertsWindowsPage;
 import pages.HomePage;
+import sharedData.SharedData;
 
 import java.time.Duration;
 
-public class AlertTest {
+public class AlertTest extends SharedData {
 
-    public WebDriver driver;
     @Test
     public void alertTest(){
-        driver = new ChromeDriver();
-        driver.get("https://demoqa.com");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.navigateToAlertsMenu();
-        AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage(driver);
+
+        AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage(getDriver());
         alertsWindowsPage.navigateToAlertsPage();
-        AlertsPage alertsPage = new AlertsPage(driver);
+
+        AlertsPage alertsPage = new AlertsPage(getDriver());
         alertsPage.interactAlertOk();
         alertsPage.interactWithTimerButton();
         alertsPage.interactWithPromptButton("text alerta");

@@ -1,11 +1,10 @@
 package helperMethods;
-
 import org.openqa.selenium.WebDriver;
-
+import sharedData.SharedData;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WindowsMethods {
+public class WindowsMethods extends SharedData {
 
     public WebDriver driver;
 
