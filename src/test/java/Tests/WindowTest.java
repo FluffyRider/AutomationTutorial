@@ -7,20 +7,19 @@ import pages.WindowsPage;
 import sharedData.SharedData;
 
 public class WindowTest extends SharedData {
-    public WebDriver driver;
+
 
     @Test
     public void windowTest() {
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.navigateToAlertsMenu();
 
-        AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage(driver);
+        AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage(getDriver());
         alertsWindowsPage.navigateToWindowPage();
 
-        WindowsPage windowsPage = new WindowsPage(driver);
+        WindowsPage windowsPage = new WindowsPage(getDriver());
         windowsPage.interactWithNewTab();
         windowsPage.interactWithNewWindow();
-
     }
 }

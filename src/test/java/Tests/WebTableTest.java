@@ -12,13 +12,13 @@ public class WebTableTest extends SharedData {
     @Test
     public void metodaTest(){
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.navigateToElementsMenu();
 
-        ElementsPage elementsPage = new ElementsPage(driver);
+        ElementsPage elementsPage = new ElementsPage(getDriver());
         elementsPage.selectWebTableSubmenu();
 
-        WebTablePage webTablePage = new WebTablePage(driver);
+        WebTablePage webTablePage = new WebTablePage(getDriver());
         webTablePage.addEntry("Marius", "D", "lfsdfwefwe@outlook.com", "41",
                 "4335", "Testing");
         webTablePage.editEntry("10001", "QC");

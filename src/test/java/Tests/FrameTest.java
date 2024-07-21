@@ -13,18 +13,18 @@ public class FrameTest extends SharedData{
         @Test
         public void alertTest() {
 
-            HomePage homePage = new HomePage(driver);
+            HomePage homePage = new HomePage(getDriver());
             homePage.navigateToAlertsMenu();
 
-            AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage(driver);
+            AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage(getDriver());
             alertsWindowsPage.navigateToFramePage();
 
-            FramePage framePage = new FramePage(driver);
+            FramePage framePage = new FramePage(getDriver());
             framePage.interactWithBigIFrame();
             framePage.interactWithSmallIFrame();
             framePage.navigateToNestedFrames();
 
-            NestedFramePage nestedFramePage = new NestedFramePage(driver);
+            NestedFramePage nestedFramePage = new NestedFramePage(getDriver());
             nestedFramePage.interactWithNestedFrames();
 
             //driver.quit();
